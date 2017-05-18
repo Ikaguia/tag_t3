@@ -1,10 +1,14 @@
 #include "common.hpp"
 #include "professor.hpp"
 #include "escola.hpp"
+#include "achaPareamento.hpp"
 
 int main(){
-	array<professor,101> professores;
-	array<escola,51> escolas;
+	map<int,professor> professores;
+	map<int,escola> escolas;
+	map<int,int> pareamentoPE;
+	map<int,ii> pareamentoEP;
+
 	string line;
 
 	ifstream file("entrada.txt");
@@ -37,9 +41,14 @@ int main(){
 
 	file.close();
 
-	//printa de novo só para ver que leu direito
-	FOR2(i,1,101)cout << professores[i] << endl;cout << endl;
-	FOR2(i,1,51)cout << escolas[i] << endl;cout << endl;
+	// //printa de novo só para ver que leu direito
+	// FOR2(i,1,101)cout << professores[i] << endl;cout << endl;
+	// FOR2(i,1,51)cout << escolas[i] << endl;cout << endl;
+
+	achaPareamento(professores,escolas,pareamentoPE,pareamentoEP);
+
+	for(auto p:pareamentoPE)cout << "Professor " << p.first << " pareado com escola " << p.second << endl;
+	for(auto p:pareamentoEP)cout << "Escola " << p.first << " pareado com professores " << p.second.first << " e " << p.second.second << endl;
 
 	return 0;
 }
