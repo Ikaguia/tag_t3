@@ -1,5 +1,45 @@
 #include "common.hpp"
+#include "professor.hpp"
+#include "escola.hpp"
 
 int main(){
+	array<professor,101> professores;
+	array<escola,51> escolas;
+	string line;
+
+	ifstream file("entrada.txt");
+	if(!file.is_open()){
+		cout << "Erro ao abrir arquivo \"entrada.txt\", o programa ira encerrar agora" << endl;
+		return EXIT_FAILURE;
+	}
+
+	getline(file,line);getline(file,line);getline(file,line);//ignora tres linhas de comentario + linha vazia
+
+	FOR2(i,1,101){//ler 100 professores
+		getline(file,line);
+		sscanf(line.c_str(),"(P%d, %d): (E%d, E%d, E%d, E%d, E%d)",
+			&professores[i].id,
+			&professores[i].nDeHabilitacoes,
+			&professores[i].preferencia[0],
+			&professores[i].preferencia[1],
+			&professores[i].preferencia[2],
+			&professores[i].preferencia[3],
+			&professores[i].preferencia[4]
+		);
+	}
+
+	getline(file,line);getline(file,line);getline(file,line);//ignora tres linhas de comentario + linha vazia
+
+	FOR2(i,1,51){//ler 50 escolas
+		getline(file,line);
+		sscanf(line.c_str(),"(E%d):(%d)",&escolas[i].id,&escolas[i].preferencia);
+	}
+
+	file.close();
+
+	//printa de novo só para ver que leu direito
+	FOR2(i,1,101)cout << professores[i] << endl;cout << endl;
+	FOR2(i,1,51)cout << escolas[i] << endl;cout << endl;
+
 	return 0;
 }
