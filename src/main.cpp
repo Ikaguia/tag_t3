@@ -23,7 +23,7 @@ int main(){
 		getline(file,line);
 		sscanf(line.c_str(),"(P%d, %d): (E%d, E%d, E%d, E%d, E%d)",
 			&professores[i].id,
-			&professores[i].nDeHabilitacoes,
+			&professores[i].nivel,
 			&professores[i].preferencia[0],
 			&professores[i].preferencia[1],
 			&professores[i].preferencia[2],
