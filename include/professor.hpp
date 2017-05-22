@@ -15,4 +15,7 @@ public:
 
 std::ostream& operator<<(std::ostream& os,const professor& e);
 
+
+using mapProf=map<int,professor>;
+
 #endif//PROFESSORHPP

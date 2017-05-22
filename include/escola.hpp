@@ -14,4 +14,6 @@ public:
 
 std::ostream& operator<<(std::ostream& os,const escola& e);
 
+using mapEsc=map<int,escola>;
+
 #endif//ESCOLAHPP

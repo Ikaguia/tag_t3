@@ -4,8 +4,8 @@
 #include "achaPareamento.hpp"
 
 int main(){
-	map<int,professor> professores;
-	map<int,escola> escolas;
+	mapProf professores;
+	mapEsc escolas;
 	map<int,int> pareamentoPE;
 	map<int,ii> pareamentoEP;
 
