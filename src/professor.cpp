@@ -13,6 +13,7 @@ void professor::removePreferenciasMenores(int id){
 }
 
 bool professor::prefere(int escola,int escolaAtual){
+	//cout << "professor " << id << " e" << escola << " ea" << escolaAtual << endl;
 	if(!escolaAtual)return true;
 	if(escola==escolaAtual)return false;
 	for(int pref:preferencia){

@@ -11,6 +11,6 @@ void associa(map<int,int> &parPE,map<int,ii> &parEP,int escola,int professor);
 
 void desassocia(map<int,int> &parPE,map<int,ii> &parEP,int escola,int professor);
 
-bool escolaPrefere(int nivel,ii niveisAtuais,escola& escola);
+bool escolaPrefere(int escola,int novoProf,mapEsc &escolas,mapProf &professores,int professor);
 
 #endif//ACHAPAREAMENTOHPP
