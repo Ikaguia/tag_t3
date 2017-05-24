@@ -3,14 +3,22 @@
 #include "escola.hpp"
 #include "achaPareamento.hpp"
 
+//OBS: Tratar 'aa' como uma letra 'a' craseada. Tratar 'eh' como uma letra 'e' com acento agudo.
+
 int main(){
+	
+	//Definicao dos vetores de vertices para professores e escolas
 	mapProf professores;
 	mapEsc escolas;
+	
+	//Definicao das matrizes de adjacencia entre Professores-Escolas e Escolas-Professores
 	map<int,int> pareamentoPE;
 	map<int,ii> pareamentoEP;
 
+	//Cadeia de caracteres que armazena cada linha do arquivo texto lido
 	string line;
 
+	//Leitura do arquivo texto "entrada.txt", com tratamento de erro
 	ifstream file("entrada.txt");
 	if(!file.is_open()){
 		cout << "Erro ao abrir arquivo \"entrada.txt\", o programa ira encerrar agora" << endl;
@@ -41,12 +49,15 @@ int main(){
 
 	file.close();
 
-	// //printa de novo só para ver que leu direito
+	// //printa de novo so para ver que leu direito
 	// FOR2(i,1,101)cout << professores[i] << endl;cout << endl;
 	// FOR2(i,1,51)cout << escolas[i] << endl;cout << endl;
 
+	//Metodo principal do programa: o que encontra o pareamento perfeito entre professores e escolas
 	achaPareamento(professores,escolas,pareamentoPE,pareamentoEP);
 
+	
+	//Impressao do resultado do pareamento
 	for(auto p:pareamentoPE)cout << "Professor " << p.first << " pareado com escola " << p.second << endl;
 	for(auto p:pareamentoEP)cout << "Escola " << p.first << " pareado com professores " << p.second.first << " e " << p.second.second << endl;
 
