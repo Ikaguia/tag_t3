@@ -33,7 +33,7 @@ void achaPareamento(mapProf &professores,mapEsc &escolas,map<int,int> &parPE,map
 					
 					//A condicao abaixo eh parecida com a anterior pois eh necessario verificar a preferencia da escola
 					//para ambos os professores cadastrados na escola sendo analisada
-					if(escolaPrefere(escola,professor,escolas,professores,parEP[escola].second)){
+					else if(escolaPrefere(escola,professor,escolas,professores,parEP[escola].second)){
 						// cout << "professor " << professores[professor] << " escola " << escolas[escola] << endl;
 						changed=true;
 						
