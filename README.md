@@ -10,6 +10,7 @@ para limpar o diretorio(remover arquivos temporarios), execute no terminal: "mak
 Alunos:
 
 15/0008058 - Cristiano Krug Brust
+
 16/0056802 - Vitor Moraes Dellamora
 
 
