@@ -73,6 +73,9 @@ void desassocia(map<int,int> &parPE,map<int,ii> &parEP,int escola,int professor)
 	//Se nao ha escola associada ao professor, nao ha o que desassociar
 	if(!escola)return;
 
+	//Se nao ha professor associado aa escola, nao ha o que desassociar
+	if(!professor)return;
+
 	//Verifica se o professor esta na primeira ou segunda posicao da escola a ser desassociada e o desassocia
 	if(parEP[escola].first==professor)parEP[escola].first=0;
 	else if(parEP[escola].second==professor)parEP[escola].second=0;
